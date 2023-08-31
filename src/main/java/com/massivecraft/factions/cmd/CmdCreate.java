@@ -34,11 +34,6 @@ public class CmdCreate extends FCommand {
     public void perform(CommandContext context) {
         String tag = context.argAsString(0);
 
-        if (context.fPlayer.hasFaction()) {
-            context.msg(TL.COMMAND_CREATE_MUSTLEAVE);
-            return;
-        }
-
         if (Factions.getInstance().isTagTaken(tag)) {
             context.msg(TL.COMMAND_CREATE_INUSE);
             return;
